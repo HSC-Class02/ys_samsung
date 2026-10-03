@@ -27,7 +27,7 @@ BS_KEYS={"total_assets","current_assets","current_liabilities","cash","receivabl
 CF_KEYS={"cfo","cfi","cff","depreciation","amortization"}
 
 def require_key():
-    k=os.getenv("OPENDART_API_KEY","").strip()
+    k=(os.getenv("OPENDART_API_KEY") or os.getenv("DART_API_KEY") or "").strip()
     if not k: raise RuntimeError("OPENDART_API_KEY environment variable is missing.")
     if len(k)!=40: raise RuntimeError(f"OPENDART_API_KEY must be 40 characters; got {len(k)}.")
     return k
