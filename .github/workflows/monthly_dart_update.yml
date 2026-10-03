@@ -31,16 +31,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Validate API secret
-        run: |
-          python - <<'PY'
-import os
-k=os.getenv('OPENDART_API_KEY','').strip()
-if not k:
-    raise SystemExit('OPENDART_API_KEY is not configured.')
-if len(k)!=40:
-    raise SystemExit(f'Expected a 40-character OpenDART key; got {len(k)}.')
-print('OpenDART API key is present.')
-PY
+        run: python -c "import os; k=os.getenv('OPENDART_API_KEY','').strip(); assert k, 'OPENDART_API_KEY is not configured.'; assert len(k)==40, f'Expected a 40-character OpenDART key; got {len(k)}.'; print('OpenDART API key is present.')"
       - name: Collect and analyze
         run: python src/pipeline.py
       - name: Run tests
