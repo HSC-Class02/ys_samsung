@@ -15,7 +15,7 @@ KEYS = {
  "total_assets":["자산총계"], "current_assets":["유동자산"], "current_liabilities":["유동부채"],
  "cash":["현금및현금성자산"], "receivables":["매출채권"], "inventory":["재고자산"], "ppe":["유형자산"],
  "total_liabilities":["부채총계"], "debt":["이자부차입금","차입금"], "equity":["자본총계"],
- "revenue":["매출액"], "gross_profit":["매출총이익"], "sga":["판매비와관리비","판매비 및 관리비"],
+ "revenue":["매출액","영업수익"], "gross_profit":["매출총이익"], "sga":["판매비와관리비","판매비 및 관리비"],
  "operating_income":["영업이익","영업이익(손실)"], "pretax_income":["법인세비용차감전순이익","세전이익"],
  "net_income":["당기순이익","당기순이익(손실)"], "controlling_net_income":["지배기업의 소유주에게 귀속되는 당기순이익","지배기업 소유주지분 순이익"],
  "interest_expense":["이자비용","금융비용"], "income_tax":["법인세비용"],
