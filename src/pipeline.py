@@ -219,7 +219,7 @@ def quarterly_rows(payloads):
             income=["revenue","gross_profit","sga","operating_income","pretax_income","net_income","controlling_net_income","interest_expense","income_tax","depreciation","amortization"]
             for k in income:
                 if r.get(k) is not None and h and h.get(k+"__cum") is not None and q3 and q3.get(k+"__cum") is not None:
-                    r[k]=r[k]-h[k+"__cum"]-q3[k+"__cum"]
+                    r[k]=r[k]-q3[k+"__cum"]
             for k in ["cfo","cfi","cff","capex"]:
                 if r.get(k) is not None and q3 and q3.get(k) is not None: r[k]-=q3[k]
             r["revenue__cum"]=r.get("revenue"); calc(r,q3 or prevq["annual"],92); out.append(r)
